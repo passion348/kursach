@@ -1,0 +1,14 @@
+﻿  main.cpp
+C:\Users\pas\Desktop\курсач\Project1\main.cpp(44,61): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Users\pas\Desktop\курсач\Project1\main.cpp(44,41): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Users\pas\Desktop\курсач\Project1\main.cpp(46,66): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Users\pas\Desktop\курсач\Project1\main.cpp(46,46): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Users\pas\Desktop\курсач\Project1\main.cpp(51,18): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\pas\Desktop\курсач\Project1\main.cpp(86,69): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Users\pas\Desktop\курсач\Project1\main.cpp(86,54): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Users\pas\Desktop\курсач\Project1\main.cpp(89,74): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Users\pas\Desktop\курсач\Project1\main.cpp(89,59): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Users\pas\Desktop\курсач\Project1\main.cpp(168,43): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+C:\Users\pas\Desktop\курсач\Project1\main.cpp(177,40): warning C4244: инициализация: преобразование "int" в "float", возможна потеря данных
+C:\Users\pas\Desktop\курсач\Project1\main.cpp(178,40): warning C4244: инициализация: преобразование "int" в "float", возможна потеря данных
+  Project1.vcxproj -> C:\Users\pas\Desktop\курсач\x64\Debug\Project1.exe
