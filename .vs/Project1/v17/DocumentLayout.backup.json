@@ -5,6 +5,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{C3FAEB68-7673-46E2-9C05-1FB7FA636EB0}|Project1\\Project1.vcxproj|C:\\Users\\pas\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\Project1\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{C3FAEB68-7673-46E2-9C05-1FB7FA636EB0}|Project1\\Project1.vcxproj|solutionrelative:Project1\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3FAEB68-7673-46E2-9C05-1FB7FA636EB0}|Project1\\Project1.vcxproj|C:\\Users\\pas\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\Project1\\menu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C3FAEB68-7673-46E2-9C05-1FB7FA636EB0}|Project1\\Project1.vcxproj|solutionrelative:Project1\\menu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3FAEB68-7673-46E2-9C05-1FB7FA636EB0}|Project1\\Project1.vcxproj|C:\\Users\\pas\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\Project1\\menushka.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C3FAEB68-7673-46E2-9C05-1FB7FA636EB0}|Project1\\Project1.vcxproj|solutionrelative:Project1\\menushka.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +22,34 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "menushka.h",
+              "DocumentMoniker": "C:\\Users\\pas\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\Project1\\menushka.h",
+              "RelativeDocumentMoniker": "Project1\\menushka.h",
+              "ToolTip": "C:\\Users\\pas\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\Project1\\menushka.h",
+              "RelativeToolTip": "Project1\\menushka.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAIwBgAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-05-20T11:31:44.656Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "menu.cpp",
+              "DocumentMoniker": "C:\\Users\\pas\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\Project1\\menu.cpp",
+              "RelativeDocumentMoniker": "Project1\\menu.cpp",
+              "ToolTip": "C:\\Users\\pas\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\Project1\\menu.cpp",
+              "RelativeToolTip": "Project1\\menu.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-20T11:31:31.065Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -24,7 +58,7 @@
               "RelativeDocumentMoniker": "Project1\\main.cpp",
               "ToolTip": "C:\\Users\\pas\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\Project1\\main.cpp",
               "RelativeToolTip": "Project1\\main.cpp",
-              "ViewState": "AgIAAMcAAAAAAAAAAAAIwOYAAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAAIMAAAAAAAAAAAAIwP0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-02-04T14:37:50.765Z",
               "EditorCaption": ""

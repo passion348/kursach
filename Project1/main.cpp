@@ -1,9 +1,10 @@
-#include <SFML/Graphics.hpp>
+﻿#include <SFML/Graphics.hpp>
 #include <cstdlib>
 #include <ctime>
 #include <cmath>
 #include <iostream>
 #include <vector>
+#include "menushka.h"
 
 using namespace sf;
 using namespace std;
@@ -21,7 +22,7 @@ void udal(vector<vector<CircleShape>>& balls, int row, int col, Color color,
 
     visited[row][col] = true;
     ryad.push_back({ row, col });
-    // ����� �������
+    // поиск соседей
     int dr[6] = { -1, -1, 0, 0, 1, 1 };
     int dc_even[6] = { -1, 0, -1, 1, -1, 0 };
     int dc_odd[6] = { 0, 1, -1, 1, 0, 1 };
@@ -57,9 +58,25 @@ void prikr(vector<vector<CircleShape>>& balls, int cols, Color colors[], int col
     balls.insert(balls.begin(), newRow);
 }
 int main() {
+    LC_ALL(setlocale, "RU");
     srand(static_cast<unsigned int>(time(0)));
 
     RenderWindow window(VideoMode(1200, 800), "kursach");
+
+    Texture fonTexture;
+    Sprite fonSprite;
+
+    if (!fonTexture.loadFromFile("C:\\Users\\pas\\Desktop\\курсач\\fon.jpg")) {
+        std::cerr << "Ошибка загрузки fon.jpg" << std::endl;
+    }
+    fonSprite.setTexture(fonTexture);
+
+    Menu menu(window);
+    MenuState state = menu.run();
+
+    if (state != MenuState::GAME) {
+        return 0;
+    }
 
     CircleShape pushka1(40.f, 50);
     pushka1.setFillColor(Color::Cyan);
@@ -127,11 +144,11 @@ int main() {
             window.clear(Color::Black);
 
             Font font;
-            if (!font.loadFromFile("C:\\Users\\pas\\Desktop\\������\\ArialRegular.ttf")) {
+            if (!font.loadFromFile("C:\\Users\\pas\\Desktop\\курсач\\ArialRegular.ttf")) {
                 cout << "Font not found!" << endl;
             }
             else {
-                Text text("Game Over", font, 100);
+                Text text(L"Кiнець гри", font, 100);
                 text.setFillColor(Color::Red);
                 text.setPosition(350, 350);
                 window.draw(text);
@@ -217,8 +234,8 @@ int main() {
             }
             if (gameOver) break;
         }
-
         window.clear(Color::Black);
+        window.draw(fonSprite);
 
         for (int row = 0; row < balls.size(); row++) {
             for (int col = 0; col < balls[row].size(); col++) {
@@ -226,7 +243,6 @@ int main() {
                     window.draw(balls[row][col]);
             }
         }
-
         window.draw(pushka1);
         window.draw(pushka2);
         window.draw(yadro);
