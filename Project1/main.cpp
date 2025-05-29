@@ -131,7 +131,7 @@ int main() {
     scoreText.setFont(scoreFont);
     scoreText.setCharacterSize(30);
     scoreText.setFillColor(Color::White);
-    scoreText.setPosition(20, 20);
+    scoreText.setPosition(550, 20);
     scoreText.setString(L"Очки: 0");
 
     RectangleShape restartButton(Vector2f(200, 100));

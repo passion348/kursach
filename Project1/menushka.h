@@ -23,6 +23,7 @@ private:
     Text rulesContent;
     Texture fonTexture;
     Sprite fonSprite;
+    Text gameTitle;
 
     bool isMouseOver(const RectangleShape& button, const Vector2f& mousePos);
     void drawMainMenu();
