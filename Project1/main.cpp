@@ -33,30 +33,34 @@ void udal(vector<vector<CircleShape>>& balls, int row, int col, Color color,
     }
 }
 void prikr(vector<vector<CircleShape>>& balls, int cols, Color colors[], int colorCount) {
-    vector<CircleShape> newRow(cols);
     int rowIndex = 0;
 
+    vector<CircleShape> newRow(cols);
     for (int col = 0; col < cols; col++) {
         CircleShape bubble(35.f);
         Color randomColor = colors[rand() % colorCount];
         bubble.setFillColor(randomColor);
 
-        if (rowIndex % 2 == 0)
-            bubble.setPosition(col * 70 + 70, rowIndex * 70 + 70);
-        else
-            bubble.setPosition(col * 70 + 70 + 35, rowIndex * 70 + 70);
+        float x = (rowIndex % 2 == 0) ? col * 70 + 70 : col * 70 + 70 + 35;
+        float y = rowIndex * 70 + 70;
+        bubble.setPosition(x, y);
 
         newRow[col] = bubble;
     }
 
-    for (int row = balls.size() - 1; row >= 0; row--) {
+    balls.insert(balls.begin(), newRow);
+
+    for (int row = 0; row < balls.size(); row++) {
         for (int col = 0; col < balls[row].size(); col++) {
-            balls[row][col].move(0, 70);
+            if (balls[row][col].getRadius() == 0) continue;
+
+            float x = (row % 2 == 0) ? col * 70 + 70 : col * 70 + 70 + 35;
+            float y = row * 70 + 70;
+            balls[row][col].setPosition(x, y);
         }
     }
-
-    balls.insert(balls.begin(), newRow);
 }
+
 int main() {
     LC_ALL(setlocale, "RU");
     srand(static_cast<unsigned int>(time(0)));
@@ -118,6 +122,34 @@ int main() {
     int noMatch = 0;
     bool gameOver = false;
 
+    int score = 0;
+    Font scoreFont;
+    if (!scoreFont.loadFromFile("C:\\Users\\pas\\Desktop\\курсач\\ArialRegular.ttf")) {
+        cout << "Ошибка загрузки шрифта!" << endl;
+    }
+    Text scoreText;
+    scoreText.setFont(scoreFont);
+    scoreText.setCharacterSize(30);
+    scoreText.setFillColor(Color::White);
+    scoreText.setPosition(20, 20);
+    scoreText.setString(L"Очки: 0");
+
+    RectangleShape restartButton(Vector2f(200, 100));
+    restartButton.setFillColor(Color::Red);
+    restartButton.setPosition(500, 500);
+
+    Text restartText;
+    restartText.setFont(scoreFont);
+    restartText.setString(L"Грати знову");
+    restartText.setCharacterSize(24);
+    restartText.setFillColor(Color::Black);
+    FloatRect textBounds = restartText.getLocalBounds();
+    restartText.setOrigin(textBounds.left + textBounds.width / 2, textBounds.top + textBounds.height / 2);
+    restartText.setPosition(
+        restartButton.getPosition().x + restartButton.getSize().x / 2,
+        restartButton.getPosition().y + restartButton.getSize().y / 2);
+
+
     while (window.isOpen()) {
         Event event;
         while (window.pollEvent(event)) {
@@ -150,13 +182,50 @@ int main() {
             else {
                 Text text(L"Кiнець гри", font, 100);
                 text.setFillColor(Color::Red);
-                text.setPosition(350, 350);
+                text.setPosition(350, 300);
                 window.draw(text);
             }
 
+            window.draw(restartButton);
+            window.draw(restartText);
             window.display();
+
+            while (window.pollEvent(event)) {
+                if (event.type == Event::Closed)
+                    window.close();
+
+                if (event.type == Event::MouseButtonPressed && event.mouseButton.button == Mouse::Left) {
+                    Vector2f mousePos = window.mapPixelToCoords(Mouse::getPosition(window));
+                    if (restartButton.getGlobalBounds().contains(mousePos)) {
+                        balls.clear();
+                        for (int row = 0; row < rows; row++) {
+                            vector<CircleShape> newRow(cols);
+                            for (int col = 0; col < cols; col++) {
+                                newRow[col] = CircleShape(35.f);
+                                newRow[col].setFillColor(colors[rand() % 4]);
+                                if (row % 2 == 0)
+                                    newRow[col].setPosition(col * 70 + 70, row * 70 + 70);
+                                else
+                                    newRow[col].setPosition(col * 70 + 70 + 35, row * 70 + 70);
+                            }
+                            balls.push_back(newRow);
+                        }
+
+                        yadro.setPosition(555, 600);
+                        yadro.setFillColor(colors[rand() % 4]);
+                        ismoving = false;
+                        yadronapr = Vector2f(0.f, 0.f);
+                        noMatch = 0;
+                        gameOver = false;
+                        score = 0;
+                        scoreText.setString(L"Очки: 0");
+                    }
+                }
+            }
+
             continue;
         }
+
 
         if (ismoving) {
             yadro.move(yadronapr * yadroSpeed);
@@ -206,7 +275,12 @@ int main() {
                                     int c = ryad[i].second;
                                     balls[r][c] = CircleShape(0.f);
                                 }
+
+                                int earned = 100 + (ryad.size() - 3) * 50;
+                                score += earned;
+                                scoreText.setString(L"Очки: " + to_string(score));
                             }
+
                             else {
                                 noMatch++;
                                 if (noMatch >= 3) {
@@ -246,6 +320,7 @@ int main() {
         window.draw(pushka1);
         window.draw(pushka2);
         window.draw(yadro);
+        window.draw(scoreText);
         window.display();
     }
 

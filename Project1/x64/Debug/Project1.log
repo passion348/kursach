@@ -1,15 +1,19 @@
 ﻿  main.cpp
-C:\Users\pas\Desktop\курсач\Project1\main.cpp(45,61): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
-C:\Users\pas\Desktop\курсач\Project1\main.cpp(45,41): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
-C:\Users\pas\Desktop\курсач\Project1\main.cpp(47,66): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
-C:\Users\pas\Desktop\курсач\Project1\main.cpp(47,46): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
-C:\Users\pas\Desktop\курсач\Project1\main.cpp(52,18): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
-C:\Users\pas\Desktop\курсач\Project1\main.cpp(61,5): warning C4353: нестандартное расширение: константа 0 в качестве выражения функции.  Следует заменить на подставляемую функцию "__noop"
-C:\Users\pas\Desktop\курсач\Project1\main.cpp(103,69): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
-C:\Users\pas\Desktop\курсач\Project1\main.cpp(103,54): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
-C:\Users\pas\Desktop\курсач\Project1\main.cpp(106,74): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
-C:\Users\pas\Desktop\курсач\Project1\main.cpp(106,59): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
-C:\Users\pas\Desktop\курсач\Project1\main.cpp(185,43): warning C4244: =: преобразование "float" в "int", возможна потеря данных
-C:\Users\pas\Desktop\курсач\Project1\main.cpp(194,40): warning C4244: инициализация: преобразование "int" в "float", возможна потеря данных
-C:\Users\pas\Desktop\курсач\Project1\main.cpp(195,40): warning C4244: инициализация: преобразование "int" в "float", возможна потеря данных
+C:\Users\pas\Desktop\курсач\Project1\main.cpp(44,17): warning C4244: инициализация: преобразование "int" в "float", возможна потеря данных
+C:\Users\pas\Desktop\курсач\Project1\main.cpp(45,17): warning C4244: инициализация: преобразование "int" в "float", возможна потеря данных
+C:\Users\pas\Desktop\курсач\Project1\main.cpp(57,21): warning C4244: инициализация: преобразование "int" в "float", возможна потеря данных
+C:\Users\pas\Desktop\курсач\Project1\main.cpp(58,21): warning C4244: инициализация: преобразование "int" в "float", возможна потеря данных
+C:\Users\pas\Desktop\курсач\Project1\main.cpp(65,5): warning C4353: нестандартное расширение: константа 0 в качестве выражения функции.  Следует заменить на подставляемую функцию "__noop"
+C:\Users\pas\Desktop\курсач\Project1\main.cpp(107,69): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Users\pas\Desktop\курсач\Project1\main.cpp(107,54): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Users\pas\Desktop\курсач\Project1\main.cpp(110,74): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Users\pas\Desktop\курсач\Project1\main.cpp(110,59): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Users\pas\Desktop\курсач\Project1\main.cpp(207,85): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Users\pas\Desktop\курсач\Project1\main.cpp(207,70): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Users\pas\Desktop\курсач\Project1\main.cpp(209,90): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Users\pas\Desktop\курсач\Project1\main.cpp(209,75): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Users\pas\Desktop\курсач\Project1\main.cpp(254,43): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+C:\Users\pas\Desktop\курсач\Project1\main.cpp(263,40): warning C4244: инициализация: преобразование "int" в "float", возможна потеря данных
+C:\Users\pas\Desktop\курсач\Project1\main.cpp(264,40): warning C4244: инициализация: преобразование "int" в "float", возможна потеря данных
+C:\Users\pas\Desktop\курсач\Project1\main.cpp(279,44): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
   Project1.vcxproj -> C:\Users\pas\Desktop\курсач\x64\Debug\Project1.exe
