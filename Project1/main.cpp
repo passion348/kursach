@@ -175,16 +175,11 @@ int main() {
         if (gameOver) {
             window.clear(Color::Black);
 
-            Font font;
-            if (!font.loadFromFile("C:\\Users\\pas\\Desktop\\курсач\\ArialRegular.ttf")) {
-                cout << "Font not found!" << endl;
-            }
-            else {
-                Text text(L"Кiнець гри", font, 100);
-                text.setFillColor(Color::Red);
-                text.setPosition(350, 300);
-                window.draw(text);
-            }
+            Text text(L"Кiнець гри", scoreFont, 100);
+            text.setFillColor(Color::Red);
+            text.setPosition(350, 300);
+            window.draw(text);
+
 
             window.draw(restartButton);
             window.draw(restartText);
@@ -279,8 +274,8 @@ int main() {
                                 int earned = 100 + (ryad.size() - 3) * 50;
                                 score += earned;
                                 scoreText.setString(L"Очки: " + to_string(score));
+                                noMatch = 0;
                             }
-
                             else {
                                 noMatch++;
                                 if (noMatch >= 3) {
