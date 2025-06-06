@@ -24,6 +24,8 @@ private:
     Texture fonTexture;
     Sprite fonSprite;
     Text gameTitle;
+    RectangleShape exitButton;
+    Text exitText;
 
     bool isMouseOver(const RectangleShape& button, const Vector2f& mousePos);
     void drawMainMenu();

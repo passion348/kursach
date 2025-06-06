@@ -52,6 +52,19 @@ Menu::Menu(RenderWindow& win) : window(win) {
     rulesContent.setCharacterSize(20);
     rulesContent.setFillColor(Color::Black);
     rulesContent.setPosition(100, 100);
+
+    exitButton.setSize({ 100, 50 });
+    exitButton.setPosition(550, 700);
+    exitButton.setFillColor(Color::Black);
+
+    exitText.setFont(font);
+    exitText.setString(L"Вийти");
+    exitText.setCharacterSize(18);
+    exitText.setFillColor(Color::White);
+    FloatRect exitBounds = exitText.getLocalBounds();
+    exitText.setOrigin(exitBounds.left + exitBounds.width / 2.f, exitBounds.top + exitBounds.height / 2.f);
+    exitText.setPosition(exitButton.getPosition().x + exitButton.getSize().x / 2.f, exitButton.getPosition().y + exitButton.getSize().y / 2.f);
+
 }
 
 bool Menu::isMouseOver(const RectangleShape& button, const Vector2f& pos) {
@@ -65,6 +78,8 @@ void Menu::drawMainMenu() {
     window.draw(rulesButton);
     window.draw(rulesText);
     window.draw(gameTitle);
+    window.draw(exitButton);
+    window.draw(exitText);
 }
 
 void Menu::drawRules() {
@@ -88,6 +103,10 @@ MenuState Menu::run() {
                         return MenuState::GAME;
                     if (isMouseOver(rulesButton, mousePos))
                         state = MenuState::RULES;
+                    if (isMouseOver(exitButton, mousePos)) {
+                        window.close();
+                        state = MenuState::EXIT;
+                    }
                 }
                 else if (state == MenuState::RULES) {
                     state = MenuState::MAIN;

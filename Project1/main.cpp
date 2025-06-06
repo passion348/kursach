@@ -22,7 +22,7 @@ void udal(vector<vector<CircleShape>>& balls, int row, int col, Color color,
 
     visited[row][col] = true;
     ryad.push_back({ row, col });
-    // поиск соседей
+    // пошук сусідів
     int dr[6] = { -1, -1, 0, 0, 1, 1 };
     int dc_even[6] = { -1, 0, -1, 1, -1, 0 };
     int dc_odd[6] = { 0, 1, -1, 1, 0, 1 };
@@ -145,10 +145,20 @@ int main() {
     restartText.setFillColor(Color::Black);
     FloatRect textBounds = restartText.getLocalBounds();
     restartText.setOrigin(textBounds.left + textBounds.width / 2, textBounds.top + textBounds.height / 2);
-    restartText.setPosition(
-        restartButton.getPosition().x + restartButton.getSize().x / 2,
-        restartButton.getPosition().y + restartButton.getSize().y / 2);
+    restartText.setPosition(restartButton.getPosition().x + restartButton.getSize().x / 2, restartButton.getPosition().y + restartButton.getSize().y / 2);
 
+    RectangleShape exitGameButton(Vector2f(100, 50));
+    exitGameButton.setFillColor(Color::Black);
+    exitGameButton.setPosition(550, 700);
+
+    Text exitGameText;
+    exitGameText.setFont(scoreFont);
+    exitGameText.setString(L"Вийти");
+    exitGameText.setCharacterSize(18);
+    exitGameText.setFillColor(Color::White);
+    FloatRect exitGameBounds = exitGameText.getLocalBounds();
+    exitGameText.setOrigin(exitGameBounds.left + exitGameBounds.width / 2, exitGameBounds.top + exitGameBounds.height / 2);
+    exitGameText.setPosition(exitGameButton.getPosition().x + exitGameButton.getSize().x / 2, exitGameButton.getPosition().y + exitGameButton.getSize().y / 2);
 
     while (window.isOpen()) {
         Event event;
@@ -179,10 +189,10 @@ int main() {
             text.setFillColor(Color::Red);
             text.setPosition(350, 300);
             window.draw(text);
-
-
             window.draw(restartButton);
             window.draw(restartText);
+            window.draw(exitGameButton);
+            window.draw(exitGameText);
             window.display();
 
             while (window.pollEvent(event)) {
@@ -215,12 +225,14 @@ int main() {
                         score = 0;
                         scoreText.setString(L"Очки: 0");
                     }
+                    if (exitGameButton.getGlobalBounds().contains(mousePos)) {
+                        window.close();
+                    }
                 }
             }
 
             continue;
         }
-
 
         if (ismoving) {
             yadro.move(yadronapr * yadroSpeed);
@@ -251,7 +263,6 @@ int main() {
                         while (balls.size() <= newRow) {
                             balls.emplace_back(cols);
                         }
-
                         if (newCol >= 0 && newCol < cols) {
                             CircleShape newBubble(35.f);
                             newBubble.setFillColor(shotColor);
@@ -270,7 +281,6 @@ int main() {
                                     int c = ryad[i].second;
                                     balls[r][c] = CircleShape(0.f);
                                 }
-
                                 int earned = 100 + (ryad.size() - 3) * 50;
                                 score += earned;
                                 scoreText.setString(L"Очки: " + to_string(score));
