@@ -66,6 +66,7 @@ int main() {
     srand(static_cast<unsigned int>(time(0)));
 
     RenderWindow window(VideoMode(1200, 800), "kursach");
+    window.setFramerateLimit(240);
 
     Texture fonTexture;
     Sprite fonSprite;
@@ -118,7 +119,7 @@ int main() {
 
     bool ismoving = false;
     Vector2f yadronapr(0.f, 0.f);
-    float yadroSpeed = 0.3f;
+    float yadroSpeed = 3.f;
     int noMatch = 0;
     bool gameOver = false;
 
